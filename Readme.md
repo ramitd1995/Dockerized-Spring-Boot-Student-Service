@@ -2,7 +2,7 @@
 <p class="has-line-data" data-line-start="2" data-line-end="3">Reference : <a href="https://www.youtube.com/playlist?list=PL0zysOflRCelmjxj-g4jLr3WKraSU_e8q">https://www.youtube.com/playlist?list=PL0zysOflRCelmjxj-g4jLr3WKraSU_e8q</a></p>
 <p class="has-line-data" data-line-start="4" data-line-end="5">Refer this for connecting mySql DB with JPA : <a href="https://www.youtube.com/watch?v=D1dYsIyPTYM&amp;list=PL0zysOflRCelmjxj-g4jLr3WKraSU_e8q&amp;index=23">https://www.youtube.com/watch?v=D1dYsIyPTYM&amp;list=PL0zysOflRCelmjxj-g4jLr3WKraSU_e8q&amp;index=23</a></p>
 
-**Setup Ngnix (Optional)**
+**Setup Nginx (Optional)**
 
 <p class="has-line-data" data-line-start="0" data-line-end="3">Install nginx in mac : brew install nginx<br>
 Run : nginx<br>
