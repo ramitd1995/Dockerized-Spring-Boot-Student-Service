@@ -10,6 +10,10 @@ public class Student {
     int age;
     int avg_marks;
 
+    public Student() {
+
+    }
+
     public Student(int id, String name, int age, int avg_marks){
 
         this.id = id;
@@ -17,5 +21,4 @@ public class Student {
         this.age = age;
         this.avg_marks = avg_marks;
     }
-
 }
