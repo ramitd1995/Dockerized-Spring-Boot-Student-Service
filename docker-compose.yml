@@ -1,0 +1,28 @@
+version: '3'
+services:
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres_db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: zxcv
+      POSTGRES_DB: student_service_db
+    restart: always
+
+  backend-student-service:
+    image: ramit07/studentservice
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-app
+    ports:
+      - 8090:8090
+    environment:
+      db-url: jdbc:postgresql://postgres-db:5432/student_service_db
+      db-username: postgres
+      db-password: zxcv
+    depends_on:
+      - postgres-db
+    restart: always
