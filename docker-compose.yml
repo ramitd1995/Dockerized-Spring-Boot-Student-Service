@@ -20,9 +20,9 @@ services:
     ports:
       - 8090:8090
     environment:
-      db-url: jdbc:postgresql://postgres-db:5432/student_service_db
-      db-username: postgres
-      db-password: zxcv
+      db_url: jdbc:postgresql://postgres-db:5432/student_service_db
+      db_username: postgres
+      db_password: zxcv
     depends_on:
       - postgres-db
     restart: always
