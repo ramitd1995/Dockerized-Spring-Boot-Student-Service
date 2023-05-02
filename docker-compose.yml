@@ -4,15 +4,18 @@ services:
     image: postgres:latest
     container_name: postgres_db
     ports:
-      - 5432:5432
+      - 5435:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: zxcv
       POSTGRES_DB: student_service_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     restart: always
 
   backend-student-service:
-    image: ramit07/studentservice
+    image: ramit07/springboot_studentservice
     build:
       context: .
       dockerfile: Dockerfile
@@ -24,5 +27,10 @@ services:
       db_username: postgres
       db_password: zxcv
     depends_on:
-      - postgres-db
+      postgres-db:
+        condition: service_started
     restart: always
+
+#Creating volume for data to persist even when postgres container is stopped or removed
+volumes:
+  pgdata:

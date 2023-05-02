@@ -1,5 +1,8 @@
-FROM openjdk:8
+FROM alpine/git as clone
+WORKDIR /app
+RUN git clone https://github.com/ramitd1995/Spring-Boot-Student-Service.git
 
+FROM openjdk:8
 ARG MAVEN_VERSION=3.8.8
 ARG USER_HOME_DIR="/root"
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
@@ -13,10 +16,6 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
 
-RUN apt-get -y update \
-&& apt-get -y install git
-
-RUN git clone https://github.com/ramitd1995/Spring-Boot-Student-Service.git
-WORKDIR '/Spring-Boot-Student-Service'
-
+WORKDIR /Spring-Boot-Student-Service-App
+COPY --from=clone /app/Spring-Boot-Student-Service /Spring-Boot-Student-Service-App
 CMD mvn spring-boot:run

@@ -42,7 +42,7 @@ ___
 <p class="has-line-data" data-line-start="2" data-line-end="3">Quick steps to be performed for postgres setup :</p>
 <ol>
 <li class="has-line-data" data-line-start="3" data-line-end="4">Download postgres for DB integration : <a href="https://www.postgresql.org/download/">https://www.postgresql.org/download/</a></li>
-<li class="has-line-data" data-line-start="4" data-line-end="5">Once downloaded, configure pgadmin in local and create a database.</li>
+<li class="has-line-data" data-line-start="4" data-line-end="5">Once downloaded, configure pgadmin in local and create a database by name "student_service_db".</li>
 <li class="has-line-data" data-line-start="5" data-line-end="7">Add postgres configuration in application.properties(db name, username, password). Default username is postgres and default postgres port is 5432.</li>
 </ol>
 <p class="has-line-data" data-line-start="7" data-line-end="8">DB table “student_data” would get automatically created once spring boot application is launched.</p>
