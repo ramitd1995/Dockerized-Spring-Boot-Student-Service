@@ -20,8 +20,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: springboot-app
-    ports:
-      - 8090:8090
+    expose:
+      - 8090
     environment:
       db_url: jdbc:postgresql://postgres-db:5432/student_service_db
       db_username: postgres
