@@ -1,5 +1,6 @@
 package com.startbuild.microservice.buildservice.controllers;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -30,5 +31,9 @@ public class BasicMicroService {
         return "ID: " + id;
     }
 
+    @GetMapping("/pod")
+    public ResponseEntity<String> getPodName() {
+        return ResponseEntity.ok(System.getenv("HOSTNAME"));
+    }
 
 }
